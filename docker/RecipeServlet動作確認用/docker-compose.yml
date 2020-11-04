@@ -6,7 +6,7 @@ services:
       ports:
        - 18080:8080
       volumes:
-      - ./mystok/webapps:/usr/local/tomcat/webapps/
+      - ./mystok-app/webapps:/usr/local/tomcat/webapps/
       depends_on:
         - memoapp-db
    mystok-db:
