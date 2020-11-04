@@ -1,0 +1,13 @@
+version: '3'
+services:
+   mystok-app:
+      build: ./mystok-app 
+      image: mystok-app:3
+      ports:
+       - 18080:8080
+      volumes:
+      - ./mystok/webapps:/usr/local/tomcat/webapps/
+      depends_on:
+        - memoapp-db
+   mystok-db:
+      image: mysql:5.7
