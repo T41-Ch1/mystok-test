@@ -2,13 +2,15 @@ version: '3'
 services:
    mystok-app:
       build: ./mystok-app 
-      image: mystok-app:3
+      image: mystok-app:4
       ports:
        - 18080:8080
       volumes:
       - ./mystok-app/webapps:/usr/local/tomcat/webapps/
-     # - ./mystok-app/lib:/usr/local/tomcat/webapps/mystok/WEB-INF/lib
+      - ./mystok-app/lib:/usr/local/tomcat/webapps/mystok/WEB-INF/lib
       depends_on:
         - mystok-db
    mystok-db:
       image: dekabitasp/mystok-mysql-search-japanese-test:solved
+      expose:
+      - "3306"  
