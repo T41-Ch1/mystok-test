@@ -8,6 +8,6 @@ services:
       volumes:
       - ./mystok-app/webapps:/usr/local/tomcat/webapps/
       depends_on:
-        - memoapp-db
+        - mystok-db
    mystok-db:
-      image: mysql:5.7
+      image: dekabitasp/mystok-mysql-search-japanese-test:solved
