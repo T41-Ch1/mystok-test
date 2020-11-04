@@ -7,6 +7,7 @@ services:
        - 18080:8080
       volumes:
       - ./mystok-app/webapps:/usr/local/tomcat/webapps/
+     # - ./mystok-app/lib:/usr/local/tomcat/webapps/mystok/WEB-INF/lib
       depends_on:
         - mystok-db
    mystok-db:
