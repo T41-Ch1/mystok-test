@@ -1,1 +1,1 @@
-FROM openjdk:8
+FROM tomcat:8
