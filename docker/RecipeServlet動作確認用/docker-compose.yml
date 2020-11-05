@@ -14,3 +14,5 @@ services:
       image: dekabitasp/mystok-mysql-search-japanese-test:solved
       ports:
       - 3306:3306
+      volumes:
+      - ./mystok-db/:/usr/local/etc/
