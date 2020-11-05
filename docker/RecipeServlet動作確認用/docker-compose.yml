@@ -9,10 +9,18 @@ services:
       - ./mystok-app/webapps:/usr/local/tomcat/webapps/
       - ./mystok-app/lib:/usr/local/tomcat/webapps/mystok/WEB-INF/lib
       depends_on:
-        - mystok-db
+      - mystok-db
    mystok-db:
       image: dekabitasp/mystok-mysql-search-japanese-test:solved
       ports:
       - 3306:3306
       volumes:
       - ./mystok-db:/var/lib/mysql-files
+   mystok-proxy:
+      image: nginx:latest
+      ports:
+      - 18090:80
+      volumes:
+      - ./mystok-proxy:/etc/nginx/conf.d/
+      depends_on:
+      - mystok-app
