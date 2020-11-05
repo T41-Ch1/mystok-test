@@ -15,4 +15,4 @@ services:
       ports:
       - 3306:3306
       volumes:
-      - ./mystok-db/:/var/lib/myslq-files/
+      - ./mystok-db:/var/lib/mysql-files
