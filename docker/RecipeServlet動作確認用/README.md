@@ -1,1 +1,1 @@
-mystok.warが展開されたmystokフォルダを都度消さないと、java,jspが入ってないmystokフォルダになってしまう
+mystok.war更新時、mystok.warが展開されたmystokフォルダを消さないと、java,jspが入ってないmystokフォルダになってしまう
