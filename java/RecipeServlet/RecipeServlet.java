@@ -50,15 +50,15 @@ public class RecipeServlet extends HttpServlet {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String sql1 = "select Ryourimei from ryourimeitb where RyouriID = " + recipeID;
-		String sql2 = "select Tukurikata from tukurikatatb where RyouriID = " + recipeID;
-		String sql3 = "select syokuzaitb.Syokuzaimei,bunryoutb.Bunryou,syokuzaitb.Tanni from bunryoutb inner join syokuzaitb on bunryoutb.SyokuzaiID = syokuzaitb.SyokuzaiID where bunryoutb.RyouriID = " + recipeID;
+		String sql1 = "select Ryourimei from RyourimeiTB where RyouriID = " + recipeID;
+		String sql2 = "select Tukurikata from TukurikataTB where RyouriID = " + recipeID;
+		String sql3 = "select SyokuzaiTB.Syokuzaimei,BunryouTB.Bunryou,SyokuzaiTB.Tanni from BunryouTB inner join SyokuzaiTB on BunryouTB.SyokuzaiID = SyokuzaiTB.SyokuzaiID where BunryouTB.RyouriID = " + recipeID;
 
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/mystok?autoReconnect=true&useSSL=false&serverTimezone=JST","root","password");
+					"jdbc:mysql://mystok-db:3306/mystok?autoReconnect=true&useSSL=false&serverTimezone=JST","root","password");
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql1);
 
@@ -96,7 +96,7 @@ public class RecipeServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/mystok?autoReconnect=true&useSSL=false&serverTimezone=JST","root","password");
+					"jdbc:mysql://mystok-db:3306/mystok?autoReconnect=true&useSSL=false&serverTimezone=JST","root","password");
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql2);
 
@@ -133,7 +133,7 @@ public class RecipeServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/mystok?autoReconnect=true&useSSL=false&serverTimezone=JST","root","password");
+					"jdbc:mysql://mystok-db:3306/mystok?autoReconnect=true&useSSL=false&serverTimezone=JST","root","password");
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql3);
 		//[[じゃいも,1,個],[にんじん,2,本][牛肉,100,g]]のような感じのArrayList recipe_bunryou1を作成する

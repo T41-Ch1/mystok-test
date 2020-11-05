@@ -11,6 +11,7 @@
 <h1>なんでなんだああああああああああああ</h1>
 <%=request.getAttribute("recipe_name")%>
 <%=request.getAttribute("tukurikata")%>
+
 <%
 ArrayList<String[]> list =new ArrayList<>();
 list = (ArrayList<String[]>)request.getAttribute("recipe_bunryou");
@@ -18,11 +19,10 @@ list = (ArrayList<String[]>)request.getAttribute("recipe_bunryou");
 for (int i=0;i < list.size();i++) {
 	for ( int j=0; j < 3;j++) {
 
-		System.out.println(list.get(i)[j]);
+		out.println(list.get(i)[j]);
 	}
 }
 %>
-
 
 
 </body>
