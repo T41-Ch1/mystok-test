@@ -1,0 +1,1 @@
+mystok.warが展開されたmystokフォルダを都度消さないと、java,jspが入ってないmystokフォルダになってしまう
