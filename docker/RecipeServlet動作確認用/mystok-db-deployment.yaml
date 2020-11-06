@@ -29,12 +29,12 @@ spec:
         ports:
         - containerPort: 3306
         resources: {}
-        volumeMounts:
-        - mountPath: /var/lib/mysql-files
-          name: mystok-db-claim0
+#        volumeMounts:
+#        - mountPath: /var/lib/mysql-files
+#          name: mystok-db-claim0
       restartPolicy: Always
       serviceAccountName: ""
-      volumes:
-      - name: mystok-db-claim0
-        persistentVolumeClaim:
-          claimName: mystok-db-claim0
+#     volumes:
+#      - name: mystok-db-claim0
+#        persistentVolumeClaim:
+#          claimName: mystok-db-claim0
